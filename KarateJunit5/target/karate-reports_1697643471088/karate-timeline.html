@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"examples\/users\/post[2.1:48]","start":1697643027287,"end":1697643028671,"title":"examples\/users\/post[2.1:48] 21:00:27.287-21:00:28.671 Automating The \"Reqres\" With Test Case ID - \"175648\""},{"id":2,"group":2,"content":"examples\/users\/post[3.1:66]","start":1697643027287,"end":1697643028671,"title":"examples\/users\/post[3.1:66] 21:00:27.287-21:00:28.671 Automating The \"Reqres\" With Test Case ID - \"175648\""},{"id":3,"group":3,"content":"examples\/users\/post[5.1:102]","start":1697643027287,"end":1697643028671,"title":"examples\/users\/post[5.1:102] 21:00:27.287-21:00:28.671 Automating The \"Reqres\" With Test Case ID - \"175648\""},{"id":4,"group":4,"content":"examples\/users\/Put[1.1:15]","start":1697643027287,"end":1697643028635,"title":"examples\/users\/Put[1.1:15] 21:00:27.287-21:00:28.635 Automating The \"Reqres\" With Test Case ID - \"14538\""},{"id":5,"group":5,"content":"examples\/users\/users[1.1:38]","start":1697643027287,"end":1697643028231,"title":"examples\/users\/users[1.1:38] 21:00:27.287-21:00:28.231 Automating \"Reqres\" Using GET Request Of Test Case ID - \"172468\""}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

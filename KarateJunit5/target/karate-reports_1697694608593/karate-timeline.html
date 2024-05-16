@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"examples\/users\/Delete[1:3]","start":1697693484743,"end":1697693486173,"title":"examples\/users\/Delete[1:3] 11:01:24.743-11:01:26.173 Automating The <Name> With Test Case ID - <ID>"},{"id":2,"group":2,"content":"examples\/users\/post[1.1:31]","start":1697693484743,"end":1697693486192,"title":"examples\/users\/post[1.1:31] 11:01:24.743-11:01:26.192 Automating The \"Reqres\" With Test Case ID - \"175648\""},{"id":3,"group":3,"content":"examples\/users\/post[2.1:49]","start":1697693484743,"end":1697693486002,"title":"examples\/users\/post[2.1:49] 11:01:24.743-11:01:26.002 Automating The \"Reqres\" With Test Case ID - \"175648\""},{"id":4,"group":4,"content":"examples\/users\/post[3.1:67]","start":1697693484743,"end":1697693486159,"title":"examples\/users\/post[3.1:67] 11:01:24.743-11:01:26.159 Automating The \"Reqres\" With Test Case ID - \"175648\""},{"id":5,"group":5,"content":"examples\/users\/post[4.1:85]","start":1697693484743,"end":1697693486166,"title":"examples\/users\/post[4.1:85] 11:01:24.743-11:01:26.166 Automating The \"Reqres\" With Test Case ID - \"175648\"","className":"failed"},{"id":6,"group":3,"content":"examples\/users\/post[5.1:103]","start":1697693486009,"end":1697693486745,"title":"examples\/users\/post[5.1:103] 11:01:26.009-11:01:26.745 Automating The \"Reqres\" With Test Case ID - \"175648\""},{"id":7,"group":4,"content":"examples\/users\/Put[1.1:15]","start":1697693486166,"end":1697693486568,"title":"examples\/users\/Put[1.1:15] 11:01:26.166-11:01:26.568 Automating The \"Reqres\" With Test Case ID - \"14538\""},{"id":8,"group":1,"content":"examples\/users\/Put[2.1:27]","start":1697693486183,"end":1697693486581,"title":"examples\/users\/Put[2.1:27] 11:01:26.183-11:01:26.581 Automating The \"Reqres\" With Test Case ID - \"14538\""},{"id":9,"group":5,"content":"examples\/users\/Put[3.1:40]","start":1697693486183,"end":1697693486611,"title":"examples\/users\/Put[3.1:40] 11:01:26.183-11:01:26.611 Automating The \"Reqres\" With Test Case ID - \"14538\""},{"id":10,"group":2,"content":"examples\/users\/users[1.1:38]","start":1697693486198,"end":1697693486395,"title":"examples\/users\/users[1.1:38] 11:01:26.198-11:01:26.395 Automating \"Reqres\" Using GET Request Of Test Case ID - \"172468\""},{"id":11,"group":2,"content":"examples\/users\/users[2.1:52]","start":1697693486402,"end":1697693486431,"title":"examples\/users\/users[2.1:52] 11:01:26.402-11:01:26.431 Automating \"Reqres\" Using GET Request Of Test Case ID - \"172468\"","className":"failed"},{"id":12,"group":2,"content":"examples\/users\/users[3.1:63]","start":1697693486438,"end":1697693487134,"title":"examples\/users\/users[3.1:63] 11:01:26.438-11:01:27.134 Automating \"Reqres\" Using GET Request Of Test Case ID - \"172468\""},{"id":13,"group":4,"content":"examples\/users\/users[4.1:79]","start":1697693486572,"end":1697693486709,"title":"examples\/users\/users[4.1:79] 11:01:26.572-11:01:26.709 Automating URL With Path Params"},{"id":14,"group":1,"content":"examples\/users\/users[5.1:98]","start":1697693486586,"end":1697693486933,"title":"examples\/users\/users[5.1:98] 11:01:26.586-11:01:26.933 Automating URL With Path Params"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
